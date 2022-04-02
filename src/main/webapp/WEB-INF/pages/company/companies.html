@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Companies page</title>
+</head>
+<style th:border="black">
+    .Block {
+        border: crimson;
+        margin: 0 auto;
+        height: 600px;
+        width: 700px;
+        background-color: #b0e0e6;
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+<body>
+<h1 style="background-color: darkgreen; text-align: center"><em>Company page</em></h1>
+<hr>
+<table  class="Block">
+    <tr>
+        <th>Company id</th>
+        <th>Company name</th>
+        <th>Located country</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="company : ${companies}">
+        <td th:text="${company.id}"></td>
+        <td th:text="${company.companyName}"></td>
+        <td th:text="${company.locatedCountry}"></td>
+        <td><a th:href="@{/company/companies/update-company/{id}(id=${company.id})}">
+            <input type="submit" value="Update company">
+        </a>
+            <a th:href="@{/company/companies/delete-company/{id}(id=${company.id})}">
+                <input type="submit" value="Delete company">
+            </a>
+        </td>
+    </tr>
+</table>
+<br>
+<hr>
+<a href="/company/companies/add-company"><input type="submit" value="Create new company"></a>
+<hr>
+<a href="/course/courses"><input type="submit" value="Next course page"></a>
+<hr>
+<a href="/group/groups"><input type="submit" value="Next group page"></a>
+<hr>
+<a href="/student/students"><input type="submit" value="Next student page"></a>
+<hr>
+<a href="/teacher/teachers"><input type="submit" value="Next teacher page"></a>
+</body>
+</html>

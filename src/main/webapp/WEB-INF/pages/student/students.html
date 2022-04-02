@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Students page</title>
+</head>
+<body>
+<h1 style="background-color: cornflowerblue; text-align: center"><em>Students page</em></h1>
+<hr>
+<table border="red" style="text-align: center; width: 80%;
+       background-color: orange; border: 5px solid indigo">
+    <tr>
+        <th>Student id</th>
+        <th>Student first name</th>
+        <th>Student last name</th>
+        <th>Student email</th>
+        <th>Study format</th>
+        <th>Action</th>
+    </tr>
+    <tbody th:each="student : ${students}">
+    <tr>
+        <td th:text="${student.id}"></td>
+        <td th:text="${student.firstName}"></td>
+        <td th:text="${student.lastName}"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.studyFormat}"></td>
+        <td><a th:href="@{/student/students/update-student/{id}(id=${student.id})}">
+            <input type="submit" value="Update"></a>
+            <a th:href="@{/student/students/delete-student/{id}(id=${student.id})}">
+                <input type="submit" value="Delete"></a>
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+<br>
+<hr>
+<a href="/student/students/add-student"><input type="submit" value="Create new student"></a>
+<hr>
+<br>
+<a th:href="@{/teacher/teachers}">Back teacher page</a>
+<br>
+<a th:href="@{/company/companies}">Back company page</a>
+<br>
+<a th:href="@{/group/groups}">Back group page</a>
+<br>
+<a th:href="@{/course/courses}">Back course page</a>
+</body>
+</html>

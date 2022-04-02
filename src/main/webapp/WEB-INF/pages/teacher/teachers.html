@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Teachers page</title>
+</head>
+<body>
+<h1 style="background-color: darkolivegreen; text-align: center"><em>Teacher page</em></h1>
+<table border="green" style="background-color: aqua; width: 80%; text-align: center;
+       border: 5px solid midnightblue">
+    <tr>
+        <th>Teacher id</th>
+        <th>Teacher first name</th>
+        <th>Teacher last name</th>
+        <th>Teacher email</th>
+        <th>Action</th>
+    </tr>
+    <tbody th:each="teacher : ${teachers}">
+    <tr>
+        <td th:text="${teacher.id}"></td>
+        <td th:text="${teacher.firstName}"></td>
+        <td th:text="${teacher.lastName}"></td>
+        <td th:text="${teacher.email}"></td>
+        <td><a th:href="@{/teacher/teachers/update-teacher/{id}(id=${teacher.getId()})}">
+            <input type="submit" value="Update"></a>
+            <a th:href="@{/teacher/teachers/delete-teacher/{id}(id=${teacher.getId()})}">
+                <input type="submit" value="Delete">
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<hr>
+<!--<a th:href="@{/teacher/teachers/add-teacher(courseId=${param.courseId})}">Create new teacher</a>-->
+<!--<a href="@{/teacher/teachers/add-teacher}"><button>Create new teacher</button></a>-->
+<a th:href="@{/teacher/teachers/add-teacher}"><input type="text" value="Create new student"></a>
+<hr>
+<br>
+<a th:href="@{/company/companies}">Back company page</a>
+<br>
+<a th:href="@{/group/groups}">Back group page</a>
+<br>
+<a th:href="@{/course/courses}">Back course page</a>
+<br>
+<a th:href="@{/student/students}">Back student page</a>
+</body>
+</html>

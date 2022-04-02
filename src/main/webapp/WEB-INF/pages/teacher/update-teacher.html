@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update page</title>
+</head>
+<body>
+<h1 style="background-color: darkcyan; text-align: center"><em>Update teacher</em></h1>
+<hr>
+<form th:action="@{/teacher/teachers/edit-teacher/{id}(id=${teacher.getId()})}"
+        th:object="${teacher}" th:method="patch">
+
+    <label for="Teacher first name">Teacher first name</label>
+    <input type="text" th:field="*{firstName}" id="Teacher first name" placeholder="Enter teacher first name"/>
+    <br>
+    <label for="Teacher last name">Teacher last name</label>
+    <input type="text" th:field="*{lastName}" id="Teacher last name" placeholder="Enter teacher last name"/>
+    <br>
+    <label for="Teacher email">Teacher email</label>
+    <input type="text" th:field="*{email}" id="Teacher email" placeholder="Enter teacher email"/>
+    <br>
+    <input type="submit" value="Update"/>
+
+</form>
+
+</body>
+</html>
