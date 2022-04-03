@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <title>Add course</title>
 </head>
-<body>
+<body background="https://www.fix.ru/files/content/image/7_1.jpg">
 <h1 style="background-color: dodgerblue; text-align: center"><em>Add course page</em></h1>
 <hr>
-<form th:action="@{/course/courses/save-course(id=${course.id})}"
-      th:method="post" th:object="${course}">
-    <input type="hidden" name="id" th:field="*{id}">
+<div style="text-align: center; background: darkgoldenrod">
+    <form th:action="@{/course/courses/save-course(id=${course.id})}"
+          th:method="post" th:object="${course}">
 
-    <label for="Course name">Course name</label>
-    <input type="text" th:field="*{courseName}" id="Course name" placeholder="Enter course name">
-    <label for="Duration course">Duration course</label>
-    <input type="text" th:field="*{duration}" id="Duration course" placeholder="Enter duration course">
-    <br>
-    <input type="submit" value="Save course">
-</form>
+<!--        <input type="hidden" name="id" th:field="*{id}">-->
+        <label for="Course name">Course name</label>
+        <input type="text" th:field="*{courseName}" id="Course name" placeholder="Enter course name">
+        <br>
+        <label for="Duration course">Duration course</label>
+        <input type="text" th:field="*{duration}" id="Duration course" placeholder="Enter duration course">
+        <br>
+        <input type="submit" value="Save course">
+    </form>
+</div>
+
 <!--<form action="#"-->
 <!--        th:action="@{/courses/save(companyId=${param.companyId})}"-->
 <!--        th:object="${course}" method="post">-->

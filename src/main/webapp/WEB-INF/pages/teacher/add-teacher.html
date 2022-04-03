@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <title>Add teacher page</title>
 </head>
-<body>
+<body background="https://www.fix.ru/files/content/image/7_1.jpg">
 <h1 style="text-align: center; background-color: maroon"><em>Create new teacher</em></h1>
 <hr>
-<form action="#" th:action="@{/teacher/teachers/save-teacher/{id}(id=${teacher.id})}"
-        th:method="post" th:object="${teacher}">
+<div style="text-align: center; background: chartreuse">
+    <form action="#" th:action="@{/teacher/teachers/save-teacher/{id}(id=${teacher.id})}"
+          th:method="post" th:object="${teacher}">
 
-    <label for="Teacher first name">Teacher first name</label>
-    <input type="text" th:field="*{firstName}" id="Teacher first name" placeholder="Enter teacher first name">
-    <label for="Teacher last name">Teacher last surname</label>
-    <input type="text" th:field="*{lastName}" id="Teacher last name" placeholder="Enter teacher last name">
-    <label for="Teacher email">Teacher email</label>
-    <input type="text" th:field="*{email}" id="Teacher email" placeholder="Enter teacher email">
-    <br>
-    <input type="submit" value="Save teacher">
-</form>
+        <label for="Teacher first name">Teacher first name</label>
+        <input type="text" th:field="*{firstName}" id="Teacher first name" placeholder="Enter teacher first name">
+        <label for="Teacher last name">Teacher last name</label>
+        <input type="text" th:field="*{lastName}" id="Teacher last name" placeholder="Enter teacher last name">
+        <label for="Teacher email">Teacher email</label>
+        <input type="text" th:field="*{email}" id="Teacher email" placeholder="Enter teacher email">
+        <br>
+        <input type="submit" value="Save teacher">
+    </form>
+</div>
 
 </body>
 </html>

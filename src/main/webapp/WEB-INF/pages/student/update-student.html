@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <title>Update student</title>
 </head>
-<body>
+<body background="https://www.fix.ru/files/content/image/7_1.jpg">
 <h1 style="background-color: crimson; text-align: center"><em>Update student page</em></h1>
-<form th:action="@{/student/students/edit-student/{id}(id=${student.id})}"
-        th:object="${student}" th:method="patch">
+<hr>
+<div style="background: coral; text-align: center">
+    <form th:action="@{/student/students/edit-student/{id}(id=${student.id})}"
+          th:object="${student}" th:method="patch">
 
-    <label for="Student first name">Enter first name</label>
-    <input type="text" th:field="*{firstName}" id="Student first name" placeholder="Enter student first name"/>
-    <br>
-    <label for="Student last name">Enter last name</label>
-    <input type="text" th:field="*{lastName}" id="Student last name" placeholder="Enter student last name"/>
-    <br>
-    <label for="email">Enter Email</label>
-    <input type="text" th:field="*{email}" id="email" placeholder="Enter student email"/>
-    <br>
-    <label for="studyFormat">Study format</label>
-    <input type="text" th:field="*{studyFormat}" id="studyFormat" placeholder="Enter study format"/>
-    <br>
-    <input type="submit" value="Update"/>
+        <label for="Student first name">Enter first name</label>
+        <input type="text" th:field="*{firstName}" id="Student first name" placeholder="Enter student first name"/>
+        <br>
+        <label for="Student last name">Enter last name</label>
+        <input type="text" th:field="*{lastName}" id="Student last name" placeholder="Enter student last name"/>
+        <br>
+        <label for="email">Enter Email</label>
+        <input type="text" th:field="*{email}" id="email" placeholder="Enter student email"/>
+        <br>
+        <label for="studyFormat">Study format</label>
+        <input type="text" th:field="*{studyFormat}" id="studyFormat" placeholder="Enter study format"/>
+        <br>
+        <input type="submit" value="Update"/>
+    </form>
+</div>
 
-</form>
 
 </body>
 </html>

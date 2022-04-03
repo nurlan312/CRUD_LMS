@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <title>Update course</title>
 </head>
-<body>
+<body background="https://www.fix.ru/files/content/image/7_1.jpg">
 <h1 style="text-align: center; background-color: midnightblue"><em>Update course</em></h1>
 <hr>
-<form th:action="@{/course/courses/edit-course/{id}(id=${course.id})}"
-        th:method="patch" th:object="${course}">
-    <label for="Course name">Course name</label>
-    <input type="text" th:field="*{courseName}" id="Course name" placeholder="Enter course name">
-    <label for="Duration course">Duration course</label>
-    <input type="text" th:field="*{duration}" id="Duration course" placeholder="Enter duration course">
-    <br>
-    <input type="submit" value="Update">
-</form>
+<div style="background: darkcyan; text-align: center">
+    <form th:action="@{/course/courses/edit-course/{id}(id=${course.id})}"
+          th:method="patch" th:object="${course}">
+        <label for="Course name">Course name</label>
+        <input type="text" th:field="*{courseName}" id="Course name" placeholder="Enter course name">
+        <br>
+        <label for="Duration course">Duration course</label>
+        <input type="text" th:field="*{duration}" id="Duration course" placeholder="Enter duration course">
+        <br>
+        <input type="submit" value="Update">
+    </form>
+</div>
+
 
 </body>
 </html>

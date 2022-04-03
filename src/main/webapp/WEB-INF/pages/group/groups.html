@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <title>Groups page</title>
 </head>
-<body>
+<div>
+    <label for="search">Search students</label>
+    <input type="search" id="search" data-search>
+    <a href="/student/students"></a>
+</div>
+<body background="https://www.fix.ru/files/content/image/7_1.jpg">
 <h1 style="background-color: sienna; text-align: center"><em>Group page</em></h1>
 <hr>
 <table border="black" style="text-align: center; width: 80%;
@@ -15,6 +20,7 @@
         <th>date of start</th>
         <th>date of finish</th>
         <th>Action</th>
+        <th>Course</th>
     </tr>
     <tr th:each="group : ${groups}">
         <td th:text="${group.id}"></td>
@@ -28,18 +34,72 @@
                 <input type="submit" value="Delete">
             </a>
         </td>
+        <td><a th:href="@{/course/courses}"><button>Course</button></a></td>
     </tr>
 </table>
 <hr>
 <a href="/group/groups/add-group"><input type="submit" value="Create new group"></a>
 <hr>
-<br>
-<a th:href="@{/teacher/teachers}">Back teacher page</a>
-<br>
-<a th:href="@{/company/companies}">Back company page</a>
-<br>
-<a th:href="@{/course/courses}">Back course page</a>
-<br>
-<a th:href="@{/student/students}">Back student page</a>
+<style>
+    .bg-img {
+        /* The image used */
+        background-image: url("https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+
+        min-height: 380px;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        /* Needed to position the navbar */
+        position: relative;
+    }
+
+    /* Position the navbar container inside the image */
+    .container {
+        position: absolute;
+        margin: 20px;
+        width: auto;
+    }
+
+    /* The navbar */
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    /* Navbar links */
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+</style>
+<div class="bg-img">
+    <div class="container">
+        <div class="topnav">
+            <a href="/company/companies">Company</a>
+            <a href="/course/courses">Course</a>
+            <a href="/teacher/teachers">Teacher</a>
+            <a href="/student/students">Student</a>
+        </div>
+    </div>
+</div>
+<!--<a th:href="@{/teacher/teachers}"><button>Back teacher page</button></a>-->
+<!--<br>-->
+<!--<a th:href="@{/company/companies}"><button>Back company page</button></a>-->
+<!--<br>-->
+<!--<a th:href="@{/course/courses}"><button>Back course page</button></a>-->
+<!--<br>-->
+<!--<a th:href="@{/student/students}"><button>Back student page</button></a>-->
 </body>
 </html>

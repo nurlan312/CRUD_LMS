@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <title>Add company</title>
 </head>
-<body>
+<body background="https://www.fix.ru/files/content/image/7_1.jpg">
 <h1 style="text-align: center; background-color: orangered"><em>Add company page</em></h1>
 <hr>
-<form th:action="@{/company/companies/save-company/{id}(id=${company.id})}"
-      th:method="post" th:object="${company}">
-    <label for="Company name">Company name</label>
-    <input type="text" th:field="*{companyName}" id="Company name" placeholder="Enter company name">
-    <label for="Company located country">Located country</label>
-    <input type="text" th:field="*{locatedCountry}" id="Company located country" placeholder="Enter located country company">
-    <br>
-    <input type="submit" value="Save company">
-</form>
-
+<div style="text-align: center; background: forestgreen">
+    <form th:action="@{/company/companies/save-company/{id}(id=${company.id})}"
+          th:method="post" th:object="${company}">
+        <label for="Company name">Company name</label>
+        <input type="text" th:field="*{companyName}" id="Company name" placeholder="Enter company name">
+        <br>
+        <label for="Company located country">Located country</label>
+        <input type="text" th:field="*{locatedCountry}" id="Company located country" placeholder="Enter located country company">
+        <br>
+        <input type="submit" value="Save company">
+    </form>
+</div>
+<hr>
 </body>
 </html>

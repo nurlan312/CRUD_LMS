@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <title>Update page</title>
 </head>
-<body>
+<body background="https://www.fix.ru/files/content/image/7_1.jpg">
 <h1 style="text-align: center; background-color: darkslategrey"><em>Update page</em></h1>
 <hr>
-<form th:action="@{/group/groups/edit-group/{id}(id=${group.id})}"
-      th:method="post" th:object="${group}">
-    <label for="Group name">Group name</label>
-    <input type="text" th:field="*{groupName}" id="Group name" placeholder="Enter group name">
-    <label for="Date of start">Date of start</label>
-    <input type="text" th:field="*{dateOfStart}" id="Date of start" placeholder="Enter date of start">
-    <label for="Date of finish">Date of finish</label>
-    <input type="text" th:field="*{dateOfFinish}" id="Date of finish" placeholder="Enter date of finish">
-    <br>
-    <input type="submit" value="Update">
-</form>
+<div style="background: cornflowerblue; text-align: center;">
+    <form th:action="@{/group/groups/edit-group/{id}(id=${group.id})}"
+          th:method="post" th:object="${group}">
+        <label for="Group name">Group name</label>
+        <input type="text" th:field="*{groupName}" id="Group name" placeholder="Enter group name">
+        <br>
+        <label for="Date of start">Date of start</label>
+        <input type="text" th:field="*{dateOfStart}" id="Date of start" placeholder="Enter date of start">
+        <br>
+        <label for="Date of finish">Date of finish</label>
+        <input type="text" th:field="*{dateOfFinish}" id="Date of finish" placeholder="Enter date of finish">
+        <br>
+        <input type="submit" value="Update">
+    </form>
+</div>
+
 
 </body>
 </html>

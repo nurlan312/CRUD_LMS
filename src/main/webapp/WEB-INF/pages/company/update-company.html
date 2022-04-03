@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <title>Company update</title>
 </head>
-<body>
+<body background="https://www.fix.ru/files/content/image/7_1.jpg">
 <h1 style="background-color: brown; text-align: center"><em>Update company page</em></h1>
 <hr>
-<form th:action="@{/company/companies/edit-company/{id}(id=${company.id})}"
-      th:method="patch" th:object="${company}">
-    <label for="Company name">Company name</label>
-    <input type="text" th:field="*{companyName}" id="Company name" placeholder="Enter company name">
-    <label for="Company located country">Located company</label>
-    <input type="text" th:field="*{locatedCountry}" id="Company located country" placeholder="Enter located country company">
-    <br>
-    <input type="submit" value="Update">
-</form>
-
+<div style="background: darkslateblue; text-align: center">
+    <form th:action="@{/company/companies/edit-company/{id}(id=${company.id})}"
+          th:method="patch" th:object="${company}">
+        <label for="Company name">Company name</label>
+        <input type="text" th:field="*{companyName}" id="Company name" placeholder="Enter company name">
+        <br>
+        <label for="Company located country">Located company</label>
+        <input type="text" th:field="*{locatedCountry}" id="Company located country" placeholder="Enter located country company">
+        <br>
+        <input type="submit" value="Update">
+    </form>
+</div>
 
 </body>
 </html>

@@ -4,21 +4,49 @@
     <meta charset="UTF-8">
     <title>Companies page</title>
 </head>
-<style th:border="black">
-    .Block {
-        border: crimson;
-        margin: 0 auto;
-        height: 600px;
-        width: 700px;
-        background-color: #b0e0e6;
+<style>
+    /* Place the navbar at the bottom of the page, and make it stick */
+    .navbar {
+        background-color: #333;
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    /* Style the links inside the navigation bar */
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
         text-align: center;
-        margin-top: 20px;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    /* Change the color of links on hover */
+    .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    /* Add a green background color to the active link */
+    .navbar a.active {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    /* Hide the link that should open and close the navbar on small screens */
+    .navbar .icon {
+        display: none;
     }
 </style>
-<body>
+<body background="https://www.fix.ru/files/content/image/7_1.jpg">
 <h1 style="background-color: darkgreen; text-align: center"><em>Company page</em></h1>
 <hr>
-<table  class="Block">
+<table  border="Black" style="background: olive; text-align: center; width: 100%;
+        border: 5px solid green">
     <tr>
         <th>Company id</th>
         <th>Company name</th>
@@ -42,12 +70,19 @@
 <hr>
 <a href="/company/companies/add-company"><input type="submit" value="Create new company"></a>
 <hr>
-<a href="/course/courses"><input type="submit" value="Next course page"></a>
-<hr>
-<a href="/group/groups"><input type="submit" value="Next group page"></a>
-<hr>
-<a href="/student/students"><input type="submit" value="Next student page"></a>
-<hr>
-<a href="/teacher/teachers"><input type="submit" value="Next teacher page"></a>
+<div class="navbar" id="myNavbar">
+    <a href="/course/courses">Course</a>
+    <a href="/teacher/teachers">Teacher</a>
+    <a href="/student/students">Student</a>
+    <a href="/group/groups">Group</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+<!--<a href="/course/courses"><button>Next course page</button></a>-->
+<!--<hr>-->
+<!--<a href="/group/groups"><input type="submit" value="Next group page"></a>-->
+<!--<hr>-->
+<!--<a href="/student/students"><button>Next student page</button></a>-->
+<!--<hr>-->
+<!--<a href="/teacher/teachers"><input type="submit" value="Next teacher page"></a>-->
 </body>
 </html>
